@@ -12,3 +12,5 @@ Feature: Calculate Products Total Price
             | 3 Person Dome Tent     | 1      | 
         And I click on the button "Place An order"
         Then I see a Product Total price of 299.99 in the place order summary
+
+
