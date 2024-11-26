@@ -18,5 +18,19 @@ Feature: Calculate Products Total Price
         | Hiking Boots           | 1             | 109.90             |
         | Back Country Shorts    | 1             | 24.95              |
 
+    Scenario Outline: Calculate the total price for multiple product quantities
+           Given I am on the GMO Home Page
+           And I click on the "Enter GMO OnLine" button
+           When I write "<orderQuantity>" in the order quantity box of the product "<product>"
+           And I click on the "Place An Order" button
+           Then I should see a Product Total price of <expectedTotalPrice> in the place order summary
+       Examples:
+           | product                | orderQuantity | expectedTotalPrice |
+           | 3 Person Dome Tent     | 10            | 2999.90            |
+           | External Frame Backpack| 11            | 1979.45            |
+           | Glacier Sun Glasses    | 5             | 339.95             |
+           | Padded Socks           | 7             | 139.93             |
+           | Hiking Boots           | 9             | 989.10             |
+           | Back Country Shorts    | 2             | 49.90              |
 
 
