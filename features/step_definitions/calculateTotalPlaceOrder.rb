@@ -7,10 +7,6 @@ COLUMNS_SUMMARY_TABLE = {
 }
 
 
-Given(/^I am on the GMO Home Page$/) do
-    page.driver.browser.manage.window.maximize
-    visit('/')
-end
 
 And(/^I click on the "([^"]*)" button$/)  do |buttonName|
     click_button(buttonName) 
