@@ -5,8 +5,8 @@ Feature: Reset form fields
 
   Scenario: Fill fields and reset form
     Given I am on the GMO Home Page
-    And I click on the "Enter GMO OnLine" button for resetting
-    When I fill the form with the following quantities:
+    And I click on the "Enter GMO OnLine" button
+    When I enter the order quantities as show below:
       | Product Name              | Quantity |
       | 3 Person Dome Tent        | 6        |
       | External Frame Backpack   | 2        |
@@ -14,5 +14,5 @@ Feature: Reset form fields
       | Padded Socks              | 9        |
       | Hiking Boots              | 3        |
       | Back Country Shorts       | 2        |
-    And I click on the "Reset Form" button for resetting
+    And I click on the "Reset Form" button
     Then all fields should be cleared
