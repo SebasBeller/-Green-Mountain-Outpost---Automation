@@ -1,7 +1,5 @@
 Given(/^I am on the GMO Home Page Reset$/) do
-    page.driver.browser.manage.window.maximize
-    visit('/')
-  end
+    page.driver.browser.m
   
   And(/^I click on the "Enter GMO OnLine" button for resetting$/) do
     click_button('Enter GMO OnLine')
