@@ -1,83 +1,65 @@
-Feature: Calculate product totals
-    As a Outdoor enthusiast shopper
-    I want the system to calculate the total price for each product based on the quantity I select
-    so I can see the totals for each product on my order summary.
+Feature: Display Detailed Order Summary
+  As an outdoor enthusiast shopper,
+  I want the system to calculate and present a detailed summary of my purchase,
+  including the total price for each product, sales taxes, shipping fees, and the overall grand total,
+  so that I can review all associated costs before finalizing my order.
 
-    Scenario: Calculate the total price for product quantities
-           Given I am on the GMO Home Page
-           And I click on the "Enter GMO OnLine" button
-           When I enter the order quantities as show below:
-                | 3 Person Dome Tent     | 10 |           
-                | External Frame Backpack| 11 |           
-                | Glacier Sun Glasses    | 5  |            
-                | Padded Socks           | 7  |            
-                | Hiking Boots           | 9  |            
-                | Back Country Shorts    | 2  | 
-           And I click on the "Place An Order" button
-           Then I should see the following total prices:
-                | 3 Person Dome Tent     | $ 2999.90            |
-                | External Frame Backpack| $ 1979.45            |
-                | Glacier Sun Glasses    | $ 339.95             |
-                | Padded Socks           | $ 139.93             |
-                | Hiking Boots           | $ 989.10             |
-                | Back Country Shorts    | $ 49.90              |
-            
-    Scenario: Calculate the product total price for multiple Products
-        Given I am on the GMO Home Page
-        And I click on the "Enter GMO OnLine" button
-        When I enter the order quantities as show below:
-           | 3 Person Dome Tent     | 1 |
-           | External Frame Backpack| 2 |
-           | Glacier Sun Glasses    | 3 | 
-           | Padded Socks           | 4 | 
-           | Hiking Boots           | 5 | 
-           | Back Country Shorts    | 6 |
-        And I click on the "Place An Order" button
-        Then I should see a product total price of $ 1643.02 
+    Scenario: Calculate Total Price Based on Product Quantities
+      Given I am on the GMO Home Page
+      And I click on the "Enter GMO OnLine" button
+      When I enter the following order quantities:
+        | 3 Person Dome Tent          | 10       |
+        | External Frame Backpack     | 11       |
+        | Glacier Sun Glasses         | 5        |
+        | Padded Socks                | 7        |
+        | Hiking Boots                | 9        |
+        | Back Country Shorts         | 2        |
+      And I click on the "Place An Order" button
+      Then I should see the following order summary table:
+        | 3 Person Dome Tent          | $ 2999.90         |
+        | External Frame Backpack     | $ 1979.45         |
+        | Glacier Sun Glasses         | $ 339.95          |
+        | Padded Socks                | $ 139.93          |
+        | Hiking Boots                | $ 989.10          |
+        | Back Country Shorts         | $ 49.90           |
+        | Product Total               | $ 6498.23         |
+        | Sales Tax                   | $ 324.91          |
+        | Shipping & Handling         | $ 5.00            |
+        | Gran Total                  | $ 6828.14         |
     
-    Scenario: Calculate the sales taxe for multiple Products
+    Scenario: Calculate Total Price with a Product Quantity of 0
         Given I am on the GMO Home Page
         And I click on the "Enter GMO OnLine" button
-        When I enter the order quantities as show below:
-           | 3 Person Dome Tent     | 5 |
-           | External Frame Backpack| 5 |
-           | Glacier Sun Glasses    | 5 | 
-           | Padded Socks           | 5 | 
-           | Hiking Boots           | 5 | 
-           | Back Country Shorts    | 5 |
+        When I enter the following order quantities:
+          | 3 Person Dome Tent          | 10       |
+          | External Frame Backpack     | 11       |
+          | Glacier Sun Glasses         | 5        |
+          | Padded Socks                | 7        |
+          | Hiking Boots                | 9        |
         And I click on the "Place An Order" button
-        Then I should see a sales taxe of $ 175.69
-    
-    Scenario: Calculate the Shipping & Handling for multiple Products
+        Then I should see the following order summary table:
+          | 3 Person Dome Tent          | $ 2999.90         |
+          | External Frame Backpack     | $ 1979.45         |
+          | Glacier Sun Glasses         | $ 339.95          |
+          | Padded Socks                | $ 139.93          |
+          | Hiking Boots                | $ 989.10          |
+          | Product Total               | $ 6448.33         | 
+          | Sales Tax                   | $ 322.42          |
+          | Shipping & Handling         | $ 5.00            |
+          | Gran Total                  | $ 6775.75         |
+
+    Scenario: Calculate Total Price with a Single Product 
         Given I am on the GMO Home Page
         And I click on the "Enter GMO OnLine" button
-        When I enter the order quantities as show below:
-           | 3 Person Dome Tent     | 5 |
-           | External Frame Backpack| 5 |
-           | Glacier Sun Glasses    | 5 | 
-           | Padded Socks           | 5 | 
-           | Hiking Boots           | 5 | 
-           | Back Country Shorts    | 5 |
+        When I enter the following order quantities:
+          | External Frame Backpack     | 1        |
         And I click on the "Place An Order" button
-        Then I should see a Shipping and Handling of $ 5.00
-
-    Scenario: Calculate the Grand Total for multiple Products
-        Given I am on the GMO Home Page
-        And I click on the "Enter GMO OnLine" button
-        When I enter the order quantities as show below:
-           | 3 Person Dome Tent     | 5 |
-           | External Frame Backpack| 5 |
-           | Glacier Sun Glasses    | 5 | 
-           | Padded Socks           | 5 | 
-           | Hiking Boots           | 5 | 
-           | Back Country Shorts    | 5 |
-        And I click on the "Place An Order" button
-        Then I should see a Gran Total of $ 3694.54
-
-
-
-
-
+        Then I should see the following order summary table:
+          | External Frame Backpack     | $ 179.95          |
+          | Product Total               | $ 179.95          |
+          | Sales Tax                   | $ 9.00            |
+          | Shipping & Handling         | $ 5.00            |
+          | Gran Total                  | $ 193.95          |
 
 
 
