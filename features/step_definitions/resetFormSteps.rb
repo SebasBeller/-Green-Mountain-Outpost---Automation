@@ -1,5 +1,3 @@
-  
-  
   Then(/^all fields should be cleared$/) do
     expect(page.find('input[name="QTY_TENTS"]').value).to eq("0")
     expect(page.find('input[name="QTY_BACKPACKS"]').value).to eq("0")
