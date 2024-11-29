@@ -1,7 +1,5 @@
 START_ROW_TABLE = 2
 
-
-
 Then(/^I should see the following total prices:$/) do |table|
     expectedOrderTable = table.raw 
     start=START_ROW_TABLE
