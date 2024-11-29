@@ -3,7 +3,7 @@ Feature:
 
 Scenario: Look for the information of the site
     Given I am at the GMO online site for technologies
-    When I click the "About the GMO Site" button for technologies
+    When I click on the "About The GMO Site" button
     Then I see the list of technologies used for the site
       | HTML 3.2                     |
       | HTML Browser Extensions      |
