@@ -3,9 +3,9 @@ Given(/^I am on the GMO Home Page$/) do
 end
 
 When(/^I enter the order quantities as show below:$/) do |table|
-  @order_table = table.raw 
+  order_table = table.raw 
   expected_total_product_price = 0
-  @order_table.each do |row|
+  order_table.each do |row|
     product_name = row[0]
     quantity = row[1]
     case product_name
@@ -28,6 +28,11 @@ end
 And(/^I click on the "([^"]*)" button$/) do |button_name|
   click_button(button_name) 
 end
+
+And(/^I check the "([^"]*)" checkbox$/) do |checkbox_name|
+  check(checkbox_name) 
+end
+
 
 And(/^I am at "([^"]*)" Page$/) do |expected_title_page|
   expect(page).to have_content(expected_title_page)

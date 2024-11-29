@@ -44,7 +44,7 @@ Feature: Display Detailed Order Summary
           | Sales Tax                | <sales_tax>           |
           | Shipping & Handling      | <shipping_handling>   |
           | Gran Total               | <grand_total>         |
-      Examples:
+        Examples:
           | product_name               | quantity | product_price | product_total | sales_tax |   shipping_handling   | grand_total |
           | 3 Person Dome Tent         | 1        | $ 299.99      | $ 299.99      | $ 15.00   | $ 5.00                | $ 319.99    |
           | External Frame Backpack    | 1        | $ 179.95      | $ 179.95      | $ 9.00    | $ 5.00                | $ 193.95    |
