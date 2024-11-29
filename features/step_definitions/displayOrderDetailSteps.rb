@@ -17,3 +17,4 @@ Then(/^I should see the following order summary table:$/) do |table|
     start_row += 1
   end
 end
+
