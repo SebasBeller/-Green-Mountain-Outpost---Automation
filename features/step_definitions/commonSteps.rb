@@ -3,9 +3,15 @@ Given(/^I am on the GMO Home Page$/) do
 end
 
 When(/^I enter the order quantities as show below:$/) do |table|
+<<<<<<< HEAD
   order_table = table.raw 
   expected_total_product_price = 0
   order_table.each do |row|
+=======
+  @order_table = table.raw 
+  expected_total_product_price = 0
+  @order_table.each do |row|
+>>>>>>> dcb67328052898582b7ee234a4e5f7310409dc6f
     product_name = row[0]
     quantity = row[1]
     case product_name
