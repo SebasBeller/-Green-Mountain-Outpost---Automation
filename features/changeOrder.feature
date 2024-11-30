@@ -14,6 +14,7 @@ Feature: Place an Order
       | Hiking Boots              | 3        |
       | Back Country Shorts       | 2        |
     And I click on button named "Place An Order"
+    
     Then I should see the following quantity:
       | Qty | Product Description       |
       | 6   | 3 Person Dome Tent        |

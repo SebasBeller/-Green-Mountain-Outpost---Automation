@@ -4,11 +4,13 @@ Feature: Display Detailed Order Summary
   including the total price for each product, sales taxes, shipping fees, and the overall grand total,
   so that I can review all associated costs before finalizing my order.
 
-    @maximize
-    Scenario: Display Total Prices Based on Product Quantities
-      Given I am on the GMO Home Page
-      And I click on the "Enter GMO OnLine" button
-      And I am at "OnLine Catalog" Page
+  Background:
+    Given I am on the GMO Home Page
+    And I click on the "Enter GMO OnLine" button
+
+
+  Scenario: Display Total Prices Based on Product Quantities
+      Given I am at "OnLine Catalog" Page
       When I enter the order quantities as show below:
         | 3 Person Dome Tent          | 10       |
         | External Frame Backpack     | 11       |
@@ -30,11 +32,8 @@ Feature: Display Detailed Order Summary
         | Gran Total                  | $ 6828.14         |
   
 
-    @maximize
     Scenario Outline: Display Total Prices with a Single Product
-        Given I am on the GMO Home Page
-        And I click on the "Enter GMO OnLine" button
-        And I am at "OnLine Catalog" Page
+        Given I am at "OnLine Catalog" Page
         When I enter the order quantity 1 for "<product_name>"
         And I click on the "Place An Order" button
         Then I should see the following order summary table:
