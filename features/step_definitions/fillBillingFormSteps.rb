@@ -41,3 +41,8 @@ Then('The billing information should be copied to the shipping fields as shown b
       start_row += 1
     end
 end
+
+Then (/^I should see the following message "([^"]*)"$/) do |message|
+  expect(page.driver.browser.switch_to.alert.text).to eq(message)
+  sleep 2
+end

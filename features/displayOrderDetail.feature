@@ -5,7 +5,7 @@ Feature: Display Detailed Order Summary
   so that I can review all associated costs before finalizing my order.
 
     @maximize
-    Scenario: Calculate Total Prices Based on Product Quantities
+    Scenario: Display Total Prices Based on Product Quantities
       Given I am on the GMO Home Page
       And I click on the "Enter GMO OnLine" button
       And I am at "OnLine Catalog" Page
@@ -31,12 +31,11 @@ Feature: Display Detailed Order Summary
   
 
     @maximize
-    Scenario Outline: Calculate Total Prices with a Single Product
+    Scenario Outline: Display Total Prices with a Single Product
         Given I am on the GMO Home Page
         And I click on the "Enter GMO OnLine" button
         And I am at "OnLine Catalog" Page
-        When I enter the order quantities as show below:
-          | <product_name>           | <quantity>  |
+        When I enter the order quantity 1 for "<product_name>"
         And I click on the "Place An Order" button
         Then I should see the following order summary table:
           | <product_name>           | <product_price>       |
@@ -45,15 +44,11 @@ Feature: Display Detailed Order Summary
           | Shipping & Handling      | <shipping_handling>   |
           | Gran Total               | <grand_total>         |
       Examples:
-          | product_name               | quantity | product_price | product_total | sales_tax |   shipping_handling   | grand_total |
-          | 3 Person Dome Tent         | 1        | $ 299.99      | $ 299.99      | $ 15.00   | $ 5.00                | $ 319.99    |
-          | External Frame Backpack    | 1        | $ 179.95      | $ 179.95      | $ 9.00    | $ 5.00                | $ 193.95    |
-          | Glacier Sun Glasses        | 1        | $ 67.99       | $ 67.99       | $ 3.40    | $ 5.00                | $ 76.39     |
-          | Padded Socks               | 1        | $ 19.99       | $ 19.99       | $ 1.00    | $ 5.00                | $ 25.99     |
-          | Hiking Boots               | 1        | $ 109.90      | $ 109.90      | $ 5.50    | $ 5.00                | $ 120.40    |
-          | Back Country Shorts        | 1        | $ 24.95       | $ 24.95       | $ 1.25    | $ 5.00                | $ 31.20     |
-
-
-
-
+          | product_name            | product_price | product_total | sales_tax | shipping_handling | grand_total |
+          | 3 Person Dome Tent      | $ 299.99      | $ 299.99      | $ 15.00   | $ 5.00            | $ 319.99    |
+          | External Frame Backpack | $ 179.95      | $ 179.95      | $ 9.00    | $ 5.00            | $ 193.95    |
+          | Glacier Sun Glasses     | $ 67.99       | $ 67.99       | $ 3.40    | $ 5.00            | $ 76.39     |
+          | Padded Socks            | $ 19.99       | $ 19.99       | $ 1.00    | $ 5.00            | $ 25.99     |
+          | Hiking Boots            | $ 109.90      | $ 109.90      | $ 5.50    | $ 5.00            | $ 120.40    |
+          | Back Country Shorts     | $ 24.95       | $ 24.95       | $ 1.25    | $ 5.00            | $ 31.20     |
 
