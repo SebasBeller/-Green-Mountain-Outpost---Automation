@@ -1,9 +1,10 @@
 Feature: 
-  As an online shopper, I want to view the description of the site
+  As an online shopper, 
+  I want to view the description of the site
   So I can understand its purpose and limitations.
 
 Scenario: View the site description                                
-    Given I am at the GMO online site for the description            
+    Given I am on the GMO Home Page           
     When I click on the "About The GMO Site" button
     Then I should see the description of the site:                   
       """

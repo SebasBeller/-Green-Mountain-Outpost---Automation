@@ -1,8 +1,10 @@
 Feature:  
-  As an online shopper, I want to access information about the site so that I have confidence when using the site.
+  As an online shopper, 
+  I want to access information about the site 
+  so that I have confidence when using the site.
 
 Scenario: Look for the information of the site
-    Given I am at the GMO online site for technologies
+    Given I am on the GMO Home Page
     When I click on the "About The GMO Site" button
     Then I see the list of technologies used for the site
       | HTML 3.2                     |

@@ -44,5 +44,5 @@ end
 
 Then (/^I should see the following message "([^"]*)"$/) do |message|
   expect(page.driver.browser.switch_to.alert.text).to eq(message)
-  sleep 2
+  # sleep 2
 end

@@ -49,7 +49,6 @@ end
 
 And(/^I check the "([^"]*)" checkbox$/) do |checkbox_name|
   check(checkbox_name) 
-  sleep 2
 end
 
 
