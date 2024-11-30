@@ -1,6 +1,4 @@
-When('I click on button named {string}') do |button_name|
-  click_button(button_name)
-end
+
 Then('I should see the following quantity:') do |table|
   
   expect(page).to have_selector(:xpath, '/html/body/form/table/tbody/tr[1]/td/div/center/table', visible: true, wait: 10)

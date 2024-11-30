@@ -1,7 +1,8 @@
 Feature: Place an Order
   As an outdoor enthusiast shopper
   I want to place an order so that I can complete my purchase.
-
+  
+@maximize
   Scenario: Fill fields and place an order
     Given I am on the GMO Home Page
     And I click on the "Enter GMO OnLine" button
