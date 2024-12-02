@@ -2,7 +2,7 @@ Given(/^I am on the GMO Home Page$/) do
   visit('/')
 end
 
-When(/^I enter the order quantities as show below:$/) do |table|
+When(/^I (?:enter|remove) the order quantities as (?:show|shown) below:$/) do |table|
   order_table = table.raw 
   expected_total_product_price = 0
   order_table.each do |row|
