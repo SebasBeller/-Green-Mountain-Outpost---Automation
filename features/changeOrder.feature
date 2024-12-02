@@ -1,6 +1,7 @@
-Feature: Place an Order
+Feature: Change Order
   As an outdoor enthusiast shopper
-  I want to place an order so that I can complete my purchase.
+  I want to place an order so I can change my purchase.
+
 
   Scenario: Fill fields and place an order
     Given I am on the GMO Home Page
