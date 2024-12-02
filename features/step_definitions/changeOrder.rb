@@ -18,9 +18,11 @@ Then('I should see the following quantity:') do |table|
     end
   end
 end
+
 And('I go back to the previous page') do
   page.go_back
 end
+
 When(/^I change the order quantities as shown below:$/) do |table|
   @orderTable = table.raw
   @orderTable.each do |row|
@@ -42,6 +44,7 @@ When(/^I change the order quantities as shown below:$/) do |table|
     end
   end
 end
+
 Then('I should see the updated quantities:') do |table|
   expect(page).to have_selector(:xpath, '/html/body/form/table/tbody/tr[1]/td/div/center/table', visible: true, wait: 10)
 
