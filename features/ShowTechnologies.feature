@@ -1,9 +1,9 @@
-Feature: Show Technologies 
+Feature:Show technologies
   As an online shopper, 
-  I want to access information about the technologies used on the site 
-  so that I feel confident when using it.
+  I want to access information about the site,
+  so that I have confidence when using the site.
 
-Scenario: Display the technologies used on the site
+Scenario: Show technologies of the site
     Given I am on the GMO Home Page
     When I click on the "About The GMO Site" button
     Then I see the list of technologies used for the site

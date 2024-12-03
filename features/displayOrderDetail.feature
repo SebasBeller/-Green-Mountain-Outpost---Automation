@@ -1,7 +1,6 @@
 Feature: Display Detailed Order Summary
-  As an outdoor enthusiast shopper,
+  As an online shopper,
   I want the system to present a detailed summary of my purchase,
-  including the total price for each product, sales taxes, shipping fees, and the overall grand total,
   so that I can review all associated costs before finalizing my order.
 
   Background:
@@ -9,9 +8,10 @@ Feature: Display Detailed Order Summary
     And I click on the "Enter GMO OnLine" button
 
 
-  Scenario: Display Total Prices Based on Product Quantities
+  Scenario: Display Total Prices Based on product quantities
       Given I am at "OnLine Catalog" Page
       When I enter the order quantities as show below:
+        | Product Name                | Quantity |
         | 3 Person Dome Tent          | 10       |
         | External Frame Backpack     | 11       |
         | Glacier Sun Glasses         | 5        |
@@ -34,7 +34,9 @@ Feature: Display Detailed Order Summary
 
     Scenario Outline: Display Total Prices with a Single Product
         Given I am at "OnLine Catalog" Page
-        When I enter the order quantity 1 for "<product_name>"
+        When I enter the order quantities as show below:
+        | Product Name                | Quantity |
+        |    <product_name>           | 1        |
         And I click on the "Place An Order" button
         Then I should see the following order summary table:
           | <product_name>           | <product_price>       |
