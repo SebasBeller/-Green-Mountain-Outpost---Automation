@@ -1,6 +1,6 @@
 Feature: Fill in billing information
   As an online shopper,
-  I want to fill in my billing information,
+  I want to Fill in my billing information,
   so that I could complete my purchase.
 
   Background:
@@ -13,7 +13,7 @@ Feature: Fill in billing information
     And I click on the "Proceed With Order" button
   
 
-  Scenario Outline: Fill in billing information with different card types
+  Scenario Outline: Fill in my billing information with different card types
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
       | Name        | <Name>           |
@@ -35,7 +35,7 @@ Feature: Fill in billing information
     | Maria  | 3er anillo | Scz  | Scz  | 65432 | 456-789-0123 | maria@gmail.com  | Visa             | 1234-1234-1234-1234| 01/25       |
     | Ana    | Zona Sur   | Cbba | Cbba | 98765 | 321-654-9870 | ana@gmail.com    | MasterCard       | 1234-1234-1234-1234| 12/25       |
 
-  Scenario Outline: Fill in billing information partially
+  Scenario Outline: Fill in my billing information with missing fields
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
       | Name        | <Name>           |
@@ -65,7 +65,7 @@ Feature: Fill in billing information
 
     
 
-  Scenario:  Fill in billing information with a wrong zip code
+  Scenario:  Fill in my billing information with a wrong zip code
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
     | Name        | Pepito Perez     |
@@ -83,7 +83,7 @@ Feature: Fill in billing information
     Then I should see the following message "Please enter a valid zip code in this field."
 
 
-  Scenario:  Fill in billing information with a wrong phone number
+  Scenario:  Fill in my billing information with a wrong phone number
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
     | Name        | Pepito Perez     |
@@ -100,7 +100,7 @@ Feature: Fill in billing information
     And I click on the "Place The Order" button
     Then I should see the following message "Please enter a valid phone number in this field."
 
-  Scenario:  Fill in billing information with a wrong email
+  Scenario:  Fill in my billing information with a wrong email
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
     | Name        | Pepito Perez     |
@@ -117,7 +117,7 @@ Feature: Fill in billing information
     And I click on the "Place The Order" button
     Then I should see the following message "Please enter a valid email in this field."
 
-  Scenario:  Fill in billing information with a wrong card number for Master Card
+  Scenario:  Fill in my billing information with a wrong card number for Master Card
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
     | Name        | Pepito Perez     |
@@ -134,7 +134,7 @@ Feature: Fill in billing information
     And I click on the "Place The Order" button
     Then I should see the following message "Please enter a valid card number of the form '1234-1234-1234-1234' in this field."
   
-  Scenario:  Fill in billing information with a wrong card number for Visa
+  Scenario:  Fill in my billing information with a wrong card number for Visa
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
     | Name        | Pepito Perez     |
@@ -151,7 +151,7 @@ Feature: Fill in billing information
     And I click on the "Place The Order" button
     Then I should see the following message "Please enter a valid card number of the form '1234-1234-1234-1234' in this field."
 
-  Scenario:  Fill in billing information with a wrong card number for American Express
+  Scenario:  Fill in my billing information with a wrong card number for American Express
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
     | Name        | Pepito Perez     |
@@ -168,7 +168,7 @@ Feature: Fill in billing information
     And I click on the "Place The Order" button
     Then I should see the following message "Please enter a valid card number of the form '1234-123456-12345' in this field."
 
-  Scenario:  Fill in billing information with a wrong Expiration Date Card
+  Scenario:  Fill in my billing information with a wrong Expiration Date Card
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
     | Name        | Pepito Perez     |
