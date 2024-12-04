@@ -6,7 +6,7 @@ Feature:Show receipt Information
   Background:
     Given I am on the GMO Home Page
     And I click on the "Enter GMO OnLine" button
-    When I enter the order quantities as show below:
+    And I enter the order quantities as show below:
         | Product Name                | Quantity |
         | 3 Person Dome Tent          | 10       |
     And I click on the "Place An Order" button
