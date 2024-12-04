@@ -1,9 +1,9 @@
-Feature: Show Site Description
+Feature:Show Description
   As an online shopper, 
-  I want to view the description of the site
-  So I can understand its purpose and limitations.
+  I want to view the description of the site,
+  so that I can understand its purpose and limitations.
 
-Scenario: Display the site description                                
+Scenario: View the site description                                
     Given I am on the GMO Home Page           
     When I click on the "About The GMO Site" button
     Then I should see the description of the site:                   

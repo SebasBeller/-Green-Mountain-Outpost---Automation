@@ -5,9 +5,9 @@ After do
 end
 
 Before do
-page.driver.browser.manage.window.maximize
+  page.driver.browser.manage.window.maximize
+  @form  = Form.new
 end
-
 
 Before do
   unless internet_available?

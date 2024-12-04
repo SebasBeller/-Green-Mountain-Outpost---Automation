@@ -1,17 +1,48 @@
-Feature: Fill out ShipTo Information
+Feature: Fill in shipping Information
   As an online shopper,
-  I want to fill in the ShipTo information,
-  So that I can complete my purchase.
+  I want to fill in my shipping information,
+  so that I can complete my purchase.
 
   Background:
     Given I am on the GMO Home Page
     And I click on the "Enter GMO OnLine" button
-    When I enter the order quantity 10 for "3 Person Dome Tent"
+    And I enter the order quantities as show below:
+        | Product Name                | Quantity |
+        | 3 Person Dome Tent          | 10       |
     And I click on the "Place An Order" button
     And I click on the "Proceed With Order" button
 
 
-  Scenario: Fill out ShipTo Information Automatically using "Bill To" information
+  Scenario: Manually fill in my shipping information
+    Given I am at "Billing Information" Page
+    And I enter the bill to information as shown below:
+      | Name        | Pepito Perez     |
+      | Address     | Cala cala        |
+      | City        | Cochabamba       |
+      | State       | Cochabamba       |
+      | Zip         | 33126            |
+      | Phone       | 123-123-1234     |
+      | E-mail      | pepito@gmail.com |
+      | Credit Card | American Express |
+      | Card Number | 1234-123456-12345|
+      | Expiration  | 12/24            |
+    When I enter the shipping to information as shown below:
+      | Name        | Maria Perez      |
+      | Address     | Cala cala        |
+      | City        | Cochabamba       |
+      | State       | Cochabamba       |
+      | Zip         | 33127            |
+      | Phone       | 123-122-1234     |
+      | E-mail      | maria@gmail.com  |
+      | Credit Card | American Express |
+      | Card Number | 1234-122456-12345|
+      | Expiration  | 12/24            |
+    And I click on the "Place The Order" button
+    Then I am at "OnLine Store Receipt" Page
+
+
+
+  Scenario: Fill in my Shipping Information Automatically using "Bill To" information
     Given I am at "Billing Information" Page
     When I enter the bill to information as shown below:
       | Name        | Pepito Perez     |
@@ -32,6 +63,7 @@ Feature: Fill out ShipTo Information
       | State   | Cochabamba   |
       | Zip     | 33126        |
       | Phone   | 123-123-1234 |
+    
 
 
 

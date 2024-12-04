@@ -1,9 +1,9 @@
 Feature: Reset form fields
-  As an outdoor enthusiast shopper
-  I want to reset the form so that all fields are cleared
-  so I can start a new order.
-@maximize
-  Scenario: Fill fields and reset form
+  As an online shopper,
+  I want to reset the form,
+  so that I can start a new order.
+
+  Scenario: Resetting Form After Filling Fields
     Given I am on the GMO Home Page
     And I click on the "Enter GMO OnLine" button
     When I enter the order quantities as show below:
